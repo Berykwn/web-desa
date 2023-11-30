@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AgendaController;
 use App\Http\Controllers\AlbumController;
+use App\Http\Controllers\AnggotaController;
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PerangkatDesaController;
@@ -61,6 +62,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
             Route::post('/store', [AgendaController::class, 'store'])->name('dashboard.agenda.store');
             Route::post('/update/{id}', [AgendaController::class, 'update'])->name('dashboard.agenda.update');
             Route::post('/delete/{id}', [AgendaController::class, 'destroy'])->name('dashboard.agenda.destroy');
+        });
+
+        Route::prefix('anggota')->group(function () {
+            Route::get('/', [AnggotaController::class, 'index'])->name('dashboard.anggota');
         });
 
         Route::prefix('album')->group(function () {

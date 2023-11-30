@@ -8,7 +8,7 @@ const TentangDesa = ({ pages }) => {
             <div className="flex lg:px-32">
                 <Accordion collapseAll className="bg-white">
                     <Accordion.Panel>
-                        <Accordion.Title>What is Flowbite?</Accordion.Title>
+                        <Accordion.Title>Visi & Misi</Accordion.Title>
                         <Accordion.Content>
                             <p className="mb-2 text-gray-500 dark:text-gray-400">
                                 Flowbite is an open-source library of
@@ -31,7 +31,7 @@ const TentangDesa = ({ pages }) => {
                     </Accordion.Panel>
                     <Accordion.Panel>
                         <Accordion.Title>
-                            Is there a Figma file available?
+                            Sejarah Karang Taruna 
                         </Accordion.Title>
                         <Accordion.Content>
                             <p className="mb-2 text-gray-500 dark:text-gray-400">

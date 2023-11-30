@@ -33,7 +33,7 @@ const Sidebar = ({ sidebarOpen, pages }) => {
         },
         {
           name: "Anggota",
-          url: "dashboard",
+          url: "dashboard.anggota",
           icon: FaUsers,
           label: "Anggota",
         },
