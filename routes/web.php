@@ -8,6 +8,8 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PerangkatDesaController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TentangDesaController;
+use App\Http\Controllers\BarangController;
+use App\Http\Controllers\InventarisController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -73,6 +75,29 @@ Route::middleware(['auth', 'verified'])->group(function () {
             Route::get('/tambah', [AlbumController::class, 'create'])->name('dashboard.album.create');
             Route::post('/store', [AlbumController::class, 'store'])->name('dashboard.album.store');
             Route::post('/delete/{id}', [AlbumController::class, 'destroy'])->name('dashboard.album.destroy');
+        });
+
+        Route::prefix('barang')->group(function () {
+            Route::get('/', [BarangController::class, 'index'])->name('dashboard.barang');
+            Route::get('/detail', [BarangController::class, 'show'])->name('dashboard.barang.show');
+            Route::get('/tambah', [BarangController::class, 'create'])->name('dashboard.barang.create');
+            Route::post('/store', [BarangController::class, 'store'])->name('dashboard.barang.store');
+            Route::get('/edit', [BarangController::class, 'edit'])->name('dashboard.barang.edit');
+            Route::post('/update/{id}', [BarangController::class, 'update'])->name('dashboard.barang.update');
+            Route::post('/delete/{id}', [BarangController::class, 'destroy'])->name('dashboard.barang.destroy');
+        });
+
+        Route::prefix('inventaris')->group(function () {
+            Route::get('/', [InventarisController::class, 'index'])->name('dashboard.inventaris');
+
+            Route::get('/tambah/barangMasuk', [InventarisController::class, 'createBarangMasuk'])->name('dashboard.inventaris.create.barang.masuk');
+            Route::post('/store/barangMasuk', [InventarisController::class, 'storeBarangMasuk'])->name('dashboard.inventaris.store.barang.masuk');
+            Route::post('/delete/barangMasuk/{id}', [InventarisController::class, 'destroyBarangMasuk'])->name('dashboard.inventaris.destroy.barang.masuk');
+            
+            Route::get('/tambah/barangKeluar', [InventarisController::class, 'createBarangKeluar'])->name('dashboard.inventaris.create.barang.keluar');
+            Route::post('/store/barangKeluar', [InventarisController::class, 'storeBarangKeluar'])->name('dashboard.inventaris.store.barang.keluar');
+            Route::post('/delete/barangKeluar/{id}', [InventarisController::class, 'destroyBarangKeluar'])->name('dashboard.inventaris.destroy.barang.keluar');
+
         });
     });
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { TbNews, TbCalendarEvent, TbAlbum } from "react-icons/tb";
+import { TbNews, TbCalendarEvent, TbAlbum, TbBuildingWarehouse } from "react-icons/tb";
 import { FaUsers } from "react-icons/fa6";
 import { CgMenuGridR } from "react-icons/cg";
 import { Link } from "@inertiajs/react";
@@ -36,6 +36,18 @@ const Sidebar = ({ sidebarOpen, pages }) => {
           url: "dashboard.anggota",
           icon: FaUsers,
           label: "Anggota",
+        },
+        {
+          name: "Barang",
+          url: "dashboard.barang",
+          icon: TbBuildingWarehouse,
+          label: "Barang",
+        },
+        {
+          name: "Inventaris",
+          url: "dashboard.inventaris",
+          icon: TbBuildingWarehouse,
+          label: "Inventaris",
         },
     ];
 
